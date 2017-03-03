@@ -12,6 +12,8 @@ import com.lightbend.lagom.javadsl.persistence.PersistentEntityRegistry;
 import java.util.Optional;
 
 import javax.inject.Inject;
+
+import com.lightbend.lagom.javadsl.persistence.ReadSide;
 import edu.knoldus.hello.api.GreetingMessage;
 import edu.knoldus.hello.api.HelloService;
 import edu.knoldus.hello.impl.HelloCommand.*;
@@ -23,10 +25,12 @@ public class HelloServiceImpl implements HelloService {
 
   private final PersistentEntityRegistry persistentEntityRegistry;
 
+
   @Inject
-  public HelloServiceImpl(PersistentEntityRegistry persistentEntityRegistry) {
+  public HelloServiceImpl(PersistentEntityRegistry persistentEntityRegistry, ReadSide readSide) {
     this.persistentEntityRegistry = persistentEntityRegistry;
     persistentEntityRegistry.register(HelloEntity.class);
+    readSide.register(HelloEventProcessor.class);
   }
 
   @Override
