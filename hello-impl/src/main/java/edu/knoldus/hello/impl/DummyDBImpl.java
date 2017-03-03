@@ -11,7 +11,7 @@ public class DummyDBImpl implements MyDatabase {
     @Override
     public CompletionStage<Done> createTables() {
         System.out.println("Create Tables called");
-        return CompletableFuture.completedFuture(Done.getInstance());
+        return CompletableFuture.supplyAsync(() -> {return Done.getInstance();});
     }
 
     @Override
