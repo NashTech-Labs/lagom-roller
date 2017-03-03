@@ -25,6 +25,7 @@ public final class HelloState implements CompressedJsonable {
 
   @JsonCreator
   public HelloState(String message, String timestamp) {
+    System.out.println("Current state is " + message + " at " + timestamp);
     this.message = Preconditions.checkNotNull(message, "message");
     this.timestamp = Preconditions.checkNotNull(timestamp, "timestamp");
   }
