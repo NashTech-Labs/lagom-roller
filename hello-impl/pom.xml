@@ -55,6 +55,11 @@
                 <artifactId>cinnamon-lagom_2.11</artifactId>
                 <version>2.3.0</version>
             </dependency>
+		<dependency>
+		  <groupId>com.lightbend.cinnamon</groupId>
+		  <artifactId>cinnamon-akka_2.11</artifactId>
+		  <version>2.3.0</version>
+		</dependency>
  <dependency>
       <groupId>com.typesafe.akka</groupId>
       <artifactId>akka-actor_2.11</artifactId>
