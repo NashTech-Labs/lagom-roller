@@ -24,6 +24,12 @@
             <name>Lightbend Commercial</name>
             <url>https://lightbend.bintray.com/commercial-releases</url>
         </repository>
+	 <repository>
+        <id>lightbend-contrail</id>
+        <name>Lightbend Contrail</name>
+        <url>https://dl.bintray.com/typesafe/commercial-maven-releases</url>
+      </repository>
+
     </repositories>
 
     <build>
@@ -36,6 +42,11 @@
                 <groupId>com.lightbend.lagom</groupId>
                 <artifactId>lagom-maven-plugin</artifactId>
                 <version>${lagom.version}</version>
+		 <configuration>
+		        <cassandraPort>4023</cassandraPort>
+			<kafkaPort>10023</kafkaPort>
+		        <zookeeperPort>9923</zookeeperPort>
+		 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
